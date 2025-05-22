@@ -3,13 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
-import type { RootState } from './state/store'
-import { increment, incrementBy } from './state/counter/counterSlice'
+import type { AppDispatch, RootState } from './state/store'
+import { increment, incrementBy, incrementAsync } from './state/counter/counterSlice'
 
 function App() {
   const [number, setNumber] = useState(0)
   const count = useSelector((state: RootState) => state.counter.value)
-  const dispatch = useDispatch()
+  const dispatch: AppDispatch = useDispatch()
 
   return (
     <>
@@ -26,7 +26,7 @@ function App() {
         <button onClick={() => { dispatch(increment()) }}>
           count is {count}
         </button>
-        <button onClick={() => { dispatch(incrementBy(number)) }}>
+        <button onClick={() => { dispatch(incrementAsync(number)) }}>
           increment by:
         </button>
         <input type="number" value={number} onChange={e => setNumber(Number(e.target.value))} />
