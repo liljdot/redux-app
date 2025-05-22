@@ -8,7 +8,7 @@ import { increment, incrementBy, incrementAsync } from './state/counter/counterS
 
 function App() {
   const [number, setNumber] = useState(0)
-  const count = useSelector((state: RootState) => state.counter.value)
+  const {value: count, isPending} = useSelector((state: RootState) => state.counter)
   const dispatch: AppDispatch = useDispatch()
 
   return (
@@ -30,9 +30,9 @@ function App() {
           increment by:
         </button>
         <input type="number" value={number} onChange={e => setNumber(Number(e.target.value))} />
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        {isPending && <p>
+          Loading...
+        </p>}
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
