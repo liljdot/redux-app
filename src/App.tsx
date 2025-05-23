@@ -5,6 +5,7 @@ import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
 import type { AppDispatch, RootState } from './state/store'
 import { increment, incrementBy, incrementAsync } from './state/counter/counterSlice'
+import PostsList from './components/PostsList'
 
 function App() {
   const [number, setNumber] = useState(0)
@@ -37,6 +38,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <PostsList />
     </>
   )
 }

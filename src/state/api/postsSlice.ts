@@ -9,5 +9,7 @@ export const postsSlice = createApi({
         getPosts: builder.query({
             query: () => "/posts",
         })
-    })
+    }),
 })
+
+export const { useGetPostsQuery } = postsSlice
