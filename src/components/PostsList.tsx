@@ -1,4 +1,5 @@
 import { useGetPostsQuery } from "../state/api/postsSlice";
+import type { Post } from "../types";
 
 const PostsList: React.FC = () => {
     const {data: posts} = useGetPostsQuery({})
@@ -6,7 +7,7 @@ const PostsList: React.FC = () => {
     return (
         <>
         <ul>
-            {posts?.map((post:any) => <li key={post.id}>
+            {posts?.map((post: Post) => <li key={post.id}>
                 {post.title}
             </li>)}
         </ul>
