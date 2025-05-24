@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import type { AppDispatch, RootState } from './state/store'
 import { increment, incrementBy, incrementAsync } from './state/counter/counterSlice'
 import PostsList from './components/PostsList'
+import { Link } from 'react-router-dom'
 
 function App() {
   const [number, setNumber] = useState(0)
@@ -23,9 +24,9 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <a href="/state"><h1>
+      <Link to="/state"><h1>
         Go to state page
-      </h1></a>
+      </h1></Link>
       <div className="card">
         <button onClick={() => { dispatch(increment()) }}>
           count is {count}

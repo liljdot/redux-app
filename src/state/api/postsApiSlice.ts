@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type { Post } from "../../types";
 
-export const postsSlice = createApi({
-    reducerPath: "posts",
+export const postsApiSlice = createApi({
+    reducerPath: "api/posts",
     baseQuery: fetchBaseQuery({
         baseUrl: "https://jsonplaceholder.typicode.com",
     }),
@@ -20,4 +20,4 @@ export const postsSlice = createApi({
     }),
 })
 
-export const { useGetPostsQuery, useCreatePostMutation } = postsSlice
+export const { useGetPostsQuery, useCreatePostMutation } = postsApiSlice

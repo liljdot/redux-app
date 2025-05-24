@@ -1,0 +1,1 @@
+export { useGetPostsQuery, useCreatePostMutation } from "./postsApiSlice";

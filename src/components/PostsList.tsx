@@ -1,4 +1,4 @@
-import { useCreatePostMutation, useGetPostsQuery } from "../state/api/postsSlice";
+import { useCreatePostMutation, useGetPostsQuery } from "../state/api";
 import type { Post } from "../types";
 
 const PostsList: React.FC = () => {
