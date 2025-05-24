@@ -9,7 +9,7 @@ import PostsList from './components/PostsList'
 
 function App() {
   const [number, setNumber] = useState(0)
-  const {value: count, isPending} = useSelector((state: RootState) => state.counter)
+  const { value: count, isPending } = useSelector((state: RootState) => state.counter)
   const dispatch: AppDispatch = useDispatch()
 
   return (
@@ -23,6 +23,9 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <a href="/state"><h1>
+        Go to state page
+      </h1></a>
       <div className="card">
         <button onClick={() => { dispatch(increment()) }}>
           count is {count}
