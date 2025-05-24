@@ -18,6 +18,10 @@ const postsSlice = createSlice({
         builder.addMatcher(postsApiSlice.endpoints.getPosts.matchFulfilled, (state, action) => {
             state.posts = action.payload
         })
+
+        builder.addMatcher(postsApiSlice.endpoints.createPost.matchFulfilled, (state, action) => {
+            state.posts.push(action.payload)
+        })
     }
 })
 
